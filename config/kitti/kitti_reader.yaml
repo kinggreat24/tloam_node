@@ -1,0 +1,9 @@
+# kitti odometry benchmark data path
+# data_path: /home/kinggreat24/test_data/kitti
+data_path: /media/kinggreat24/Samsung_T5/data/kitti_data_full/odometry/unzip/data
+# sequence number
+sequence_num: 01
+# image kind size, set 1 will read image_0, set 2 will read image_0, image_1, set 4 will read all
+image_kind_size: 1
+# publish  velodyne topic name 
+topic_name: /velodyne_points 

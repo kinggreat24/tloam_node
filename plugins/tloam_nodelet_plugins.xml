@@ -1,0 +1,31 @@
+<library path="lib/libkitti_reader_nodelet" >
+
+    <class name="tloam/KittiNode" type="tloam::KittiNode" base_class_type="nodelet::Nodelet">
+        <description>
+            This is kitti_reader nodelet.
+        </description>
+    </class>
+
+</library>
+
+<library path="lib/libsegmentation_nodelet" >
+
+    <class name="tloam/SegmentationNode" type="tloam::SegmentationNode" base_class_type="nodelet::Nodelet">
+        <description>
+            This is segmentation nodelet.
+        </description>
+    </class>
+
+</library>
+
+<library path="lib/liblidar_odometry_nodelet" >
+
+    <class name="tloam/LidarOdometryNode" type="tloam::LidarOdometryNode" base_class_type="nodelet::Nodelet">
+        <description>
+            This is segmentation nodelet.
+        </description>
+    </class>
+
+</library>
+
+

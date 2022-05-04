@@ -1,0 +1,60 @@
+# Front-end odometer configuration file
+# registration method
+local_registration_method: TLS
+
+# Feature processing related parameters
+ground_down_sample: 0.3
+ground_down_sample_submap: 0.45
+edge_down_sample: 0.1
+edge_down_sample_submap: 0.3
+
+# How many frames of data are maintained in the local subgraph
+sphere_frame_size: 3
+planar_frame_size: 3
+
+# box Cutting length
+edge_crop_box_length: 100.0
+ground_crop_box_length: 100.0
+
+# Whether to build a global map
+mapping_flag: false
+
+# TLS param
+TLS:
+    k_corr: 10              # The number of neighborhood points considered when calculating the covariance matrix
+    factor_num: 4           # How many factors are added to the optimization function? 2~4
+    edge_dist_thres: 1.0    # Corner point feature near point search threshold
+    edge_dir_thres: 0.85    # The corner feature direction vector threshold, the larger the straight line fits, the closer to the vertical straight line
+    edge_maxnum: 1200       # How many corner features can be added to the residual function at most
+    sphere_dist_thres: 0.5  # Spherical point feature near point search threshold
+    sphere_maxnum: 200      # How many spherical point features can be added to the residual function at most
+    planar_dist_thres: 0.5  # Plane point feature near point search threshold
+    planar_maxnum: 2500     # How many vertically distributed planar features can be added to the residual function at most
+    ground_dist_thres: 0.5  # Ground point feature near point search threshold
+    ground_maxnum: 2000     # How many horizontal plane features can be added to the residual function at most
+    max_iterations: 4       # How many iterations are required at most
+    cost_threshold: 0.000000005  # Iterative convergence termination threshold
+    gnc_factor: 11.8        # Iterative convergence termination threshold
+    noise_bound: 0.01       # Upper bound of noise
+    fitness_thres: 0.02     # The coincidence matching threshold is used to calculate the matching score
+
+
+# CamLidar Extrinsic Parameter
+# KITTI-00-02
+extrinsicMatrix.need_inverse: 0
+extrinsicMatrix: [ 0.0004276802385584, -0.9999672484946, -0.008084491683471, -0.01198459927713,
+          -0.007210626507497,  0.008081198471645, -0.9999413164504, -0.05403984729748,
+           0.9999738645903,  0.0004859485810390, -0.007206933692422, -0.2921968648686,
+           0,0,0,1]
+
+# KITTI-03
+# extrinsicMatrix: [ 0.0002347736981471, -0.9999441545438, -0.01056347781105, -0.002796816941295,
+#            0.01044940741659,  0.01056535364138, -0.9998895741176, -0.07510879138296,
+#            0.9999453885620,  0.0001243653783865,  0.01045130299567, -0.2721327964059,
+#            0,0,0,1]
+
+# KITTI-04-12
+# extrinsicMatrix: [-0.001857739385241, -0.9999659513510, -0.008039975204516, -0.004784029760483,
+#           -0.006481465826011,  0.008051860151134, -0.9999466081774, -0.07337429464231,
+#            0.9999773098287, -0.001805528627661, -0.006496203536139, -0.3339968064433,
+#            0,0,0,1]
